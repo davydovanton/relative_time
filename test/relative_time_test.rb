@@ -9,11 +9,17 @@ describe RelativeTime do
     end
 
     describe 'when differense in minutes' do
-      it { RelativeTime.in_words(Time.now - 1 * 60).must_equal 'a minute ago' }
-      it { RelativeTime.in_words(Time.now - 3 * 60).must_equal '3 minutes ago' }
+      let(:minute) { 60 }
 
-      it { RelativeTime.in_words(Time.now + 1 * 60).must_equal 'in a minute' }
-      it { RelativeTime.in_words(Time.now + 3 * 60).must_equal 'in 3 minutes' }
+      it { RelativeTime.in_words(Time.now - 1  * minute).must_equal  'a minute ago' }
+      it { RelativeTime.in_words(Time.now - 3  * minute).must_equal  '3 minutes ago' }
+      it { RelativeTime.in_words(Time.now - 20 * minute).must_equal '20 minutes ago' }
+      it { RelativeTime.in_words(Time.now - 59 * minute).must_equal '59 minutes ago' }
+
+      it { RelativeTime.in_words(Time.now + 1  * minute).must_equal 'in a minute' }
+      it { RelativeTime.in_words(Time.now + 3  * minute).must_equal 'in 3 minutes' }
+      it { RelativeTime.in_words(Time.now + 20 * minute).must_equal 'in 20 minutes' }
+      it { RelativeTime.in_words(Time.now + 59 * minute).must_equal 'in 59 minutes' }
     end
   end
 end
