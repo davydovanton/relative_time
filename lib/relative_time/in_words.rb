@@ -9,20 +9,26 @@ module RelativeTime
     end
 
   private
+    MINUTE = 60 
+    HOUR   = 60 * MINUTE 
+    DAY    = 24 * HOUR 
+    WEEK   = 7  * DAY 
+    MONTH  = 4  * WEEK 
+    YEAR   = 12 * MONTH 
 
     def resolution(diff)
-      if diff >= 29030400
-        [(diff / 29030400).round, 'years']
-      elsif diff >= 2419200
-        [(diff / 2419200).round, 'months']
-      elsif diff >= 604800
-        [(diff / 604800).round, 'weeks']
-      elsif diff >= 86400
-        [(diff / 86400).round, 'days']
-      elsif diff >= 3600
-        [(diff / 3600).round, 'hours']
+      if diff >= YEAR
+        [(diff / YEAR).round, 'years']
+      elsif diff >= MONTH
+        [(diff / MONTH).round, 'months']
+      elsif diff >= WEEK
+        [(diff / WEEK).round, 'weeks']
+      elsif diff >= DAY
+        [(diff / DAY).round, 'days']
+      elsif diff >= HOUR
+        [(diff / HOUR).round, 'hours']
       else
-        [(diff / 60).round, 'minutes']
+        [(diff / MINUTE).round, 'minutes']
       end
     end
 
