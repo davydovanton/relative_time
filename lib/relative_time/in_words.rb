@@ -1,7 +1,7 @@
 module RelativeTime
   class InWords
-    def call(date_to)
-      diff = Time.now - date_to.to_time
+    def call(date_to, date_from)
+      diff = date_from - date_to.to_time
       return 'less than a minute' if diff.abs.round <= 59
 
       date_string = verb_agreement(resolution(diff.abs.round))

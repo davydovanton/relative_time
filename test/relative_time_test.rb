@@ -11,6 +11,11 @@ describe RelativeTime do
   let(:year)   { 12 * month }
 
   describe '#in_words' do
+    describe 'with from date' do
+      let(:date_from) { Time.now + 1 * hour }
+      it { RelativeTime.in_words(date, date_from).must_equal 'a hour ago' }
+    end
+
     describe 'when differense in seconds' do
       it { RelativeTime.in_words(date).must_equal      'less than a minute' }
 

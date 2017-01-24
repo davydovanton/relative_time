@@ -1,9 +1,11 @@
 # RelativeTime
 [![Build Status](https://travis-ci.org/davydovanton/relative_time.svg?branch=master)](https://travis-ci.org/davydovanton/relative_time)
 
-Simple lib without any dependensy for getting relative time
+Micro lib without any dependensy for getting relative time.
+
 
 ## Motivation
+I love rails but sometimes we need to create web apps (or CLI) without rails and AS. That's why I created `#time_ago_in_words` analog on pure ruby without any dependencies.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -21,9 +23,10 @@ Or install it yourself as:
     $ gem install relative_time
 
 ## Usage
-Just call `#in_words` method:
+Just call `#in_words` method with any time object:
 
 ```ruby
+RelativeTime.in_words(Date.today)
 RelativeTime.in_words(Time.now)          # => less than a minute
 
 RelativeTime.in_words(Time.now - 1 * 60) # => a minute ago
