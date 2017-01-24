@@ -31,6 +31,15 @@ RelativeTime.in_words(Time.now + 1 * 60) # => in a minute
 RelativeTime.in_words(Time.now + 3 * 60) # => in 3 minutes
 ```
 
+### Supported intervals
+
+* minutes
+* hours
+* days
+* weeks
+* months
+* years
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/relative_time. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
