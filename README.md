@@ -1,7 +1,7 @@
 # RelativeTime
 [![Build Status](https://travis-ci.org/davydovanton/relative_time.svg?branch=master)](https://travis-ci.org/davydovanton/relative_time)
 
-Micro lib without any dependensy for getting relative time.
+Micro lib without any dependency for getting relative time.
 
 
 ## Motivation
