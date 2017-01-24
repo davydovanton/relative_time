@@ -36,6 +36,13 @@ RelativeTime.in_words(Time.now + 1 * 60) # => in a minute
 RelativeTime.in_words(Time.now + 3 * 60) # => in 3 minutes
 ```
 
+Also you can use second argument as a from date:
+
+```ruby
+date_from = Time.now - 60 * 60 # one hour ago
+RelativeTime.in_words(Time.now, date_from)          # => a hour ago
+```
+
 ### Supported intervals
 
 * minutes
