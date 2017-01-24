@@ -1,4 +1,6 @@
 # RelativeTime
+[![Build Status](https://travis-ci.org/davydovanton/relative_time.svg?branch=master)](https://travis-ci.org/davydovanton/relative_time)
+
 Simple lib without any dependensy for getting relative time
 
 ## Motivation
