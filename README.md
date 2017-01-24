@@ -19,16 +19,16 @@ Or install it yourself as:
     $ gem install relative_time
 
 ## Usage
-Just call `#in_worlds` method:
+Just call `#in_words` method:
 
 ```ruby
-RelativeTime.in_worlds(Time.now)          # => less than a minute
+RelativeTime.in_words(Time.now)          # => less than a minute
 
-RelativeTime.in_worlds(Time.now - 1 * 60) # => a minute ago
-RelativeTime.in_worlds(Time.now - 3 * 60) # => 3 minutes ago
+RelativeTime.in_words(Time.now - 1 * 60) # => a minute ago
+RelativeTime.in_words(Time.now - 3 * 60) # => 3 minutes ago
 
-RelativeTime.in_worlds(Time.now + 1 * 60) # => in a minute
-RelativeTime.in_worlds(Time.now + 3 * 60) # => in 3 minutes
+RelativeTime.in_words(Time.now + 1 * 60) # => in a minute
+RelativeTime.in_words(Time.now + 3 * 60) # => in 3 minutes
 ```
 
 ## Contributing
