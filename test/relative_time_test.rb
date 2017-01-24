@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class RelativeTimeTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::RelativeTime::VERSION
-  end
-
-  def test_it_does_something_useful
-    assert false
+describe RelativeTime do
+  describe '#in_words' do
+    describe 'when differense in seconds' do
+      it { RelativeTime.in_words(Time.now).must_equal      'less than a minute' }
+      it { RelativeTime.in_words(Time.now - 10).must_equal 'less than a minute' }
+      it { RelativeTime.in_words(Time.now + 10).must_equal 'more than a minute' }
+    end
   end
 end
