@@ -1,6 +1,8 @@
 # RelativeTime
 Simple lib without any dependensy for getting relative time
 
+## Motivation
+
 ## Installation
 Add this line to your application's Gemfile:
 
@@ -17,7 +19,17 @@ Or install it yourself as:
     $ gem install relative_time
 
 ## Usage
-TODO: Write usage instructions here
+Just call `#in_worlds` method:
+
+```ruby
+RelativeTime.in_worlds(Time.now)          # => less than a minute
+
+RelativeTime.in_worlds(Time.now - 1 * 60) # => a minute ago
+RelativeTime.in_worlds(Time.now - 3 * 60) # => 3 minutes ago
+
+RelativeTime.in_worlds(Time.now + 1 * 60) # => in a minute
+RelativeTime.in_worlds(Time.now + 3 * 60) # => in 3 minutes
+```
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/relative_time. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
