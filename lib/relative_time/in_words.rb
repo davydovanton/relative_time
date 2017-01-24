@@ -5,11 +5,8 @@ module RelativeTime
 
       return 'less than a minute' if diff.abs < 59
 
-      if diff >= 0
-        relative_ago(verb_agreement(resolution(diff)))
-      else
-        relative_later(verb_agreement(resolution(diff.abs)))
-      end
+      date_string = verb_agreement(resolution(diff))
+      diff >= 0 ? "#{date_string} ago" : "in #{date_string}"
     end
 
   private
@@ -35,14 +32,6 @@ module RelativeTime
       else
         resolution.join(' ')
       end
-    end
-
-    def relative_ago(string)
-      "#{string} ago"
-    end
-
-    def relative_later(string)
-      "in #{string}"
     end
   end
 end
