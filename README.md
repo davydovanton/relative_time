@@ -1,5 +1,5 @@
 # RelativeTime
-[![Build Status](https://travis-ci.org/davydovanton/relative_time.svg?branch=master)](https://travis-ci.org/davydovanton/relative_time)
+[![Build Status](https://travis-ci.org/davydovanton/relative_time.svg?branch=master)](https://travis-ci.org/davydovanton/relative_time) [![Code Climate](https://codeclimate.com/github/davydovanton/relative_time/badges/gpa.svg)](https://codeclimate.com/github/davydovanton/relative_time) [![Test Coverage](https://codeclimate.com/github/davydovanton/relative_time/badges/coverage.svg)](https://codeclimate.com/github/davydovanton/relative_time/coverage)
 
 Micro lib without any dependency for getting relative time.
 
