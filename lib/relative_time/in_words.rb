@@ -2,14 +2,14 @@ module RelativeTime
   class InWords
     def call(time_to)
       diff = Time.now - time_to
-
-      return 'less than a minute' if diff.abs < 59
+      return 'less than a minute' if diff.abs.round <= 59
 
       date_string = verb_agreement(resolution(diff.abs.round))
       diff >= 0 ? "#{date_string} ago" : "in #{date_string}"
     end
 
   private
+
     def resolution(diff)
       if diff >= 29030400
         [(diff / 29030400).round, 'years']
