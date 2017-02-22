@@ -14,6 +14,25 @@ describe RelativeTime do
     describe 'with from date' do
       let(:date_from) { Time.now + 1 * hour }
       it { RelativeTime.in_words(date, date_from).must_equal 'a hour ago' }
+
+      describe 'with both DateTime type' do
+        let(:date) { DateTime.new(2017, 1, 15, 11, 0) }
+        let(:date_from) { DateTime.new(2017, 1, 18, 15, 0) }
+
+        it { RelativeTime.in_words(date, date_from).must_equal '3 days ago' }
+      end
+
+      describe 'date_from DateTime type' do
+        let(:date_from) { DateTime.now + 1 }
+
+        it { RelativeTime.in_words(date, date_from).must_equal 'a day ago' }
+      end
+
+      describe 'date DataTime type' do
+        let(:date) { DateTime.now + 1 }
+
+        it { RelativeTime.in_words(date, date_from).must_equal 'in 23 hours' }
+      end
     end
 
     describe 'when differense in seconds' do
