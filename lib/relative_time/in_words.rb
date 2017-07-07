@@ -33,7 +33,9 @@ module RelativeTime
     end
 
     def verb_agreement(resolution)
-      if resolution[0] == 1
+      if resolution[0] == 1 && resolution.last == 'hours'
+        'an hour'
+      elsif resolution[0] == 1
         "a #{resolution.last[0...-1]}"
       else
         resolution.join(' ')

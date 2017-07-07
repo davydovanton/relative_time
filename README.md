@@ -40,7 +40,7 @@ Also you can use second argument as a from date:
 
 ```ruby
 date_from = Time.now - 60 * 60 # one hour ago
-RelativeTime.in_words(Time.now, date_from)          # => a hour ago
+RelativeTime.in_words(Time.now, date_from)          # => an hour ago
 ```
 
 ### Supported intervals
@@ -57,4 +57,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/davydo
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
