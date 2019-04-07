@@ -1,0 +1,37 @@
+ru:
+  relative:
+    less_than_a_minute: 'меньше минуты назад'
+
+    ago: 'назад'
+    in: 'через'
+
+    years:
+      one: 'год'
+      few: '%{count} года'
+      many: '%{count} лет'
+      other: '%{count} лет'
+    months:
+      one: 'месяц'
+      few: '%{count} месяца'
+      many: '%{count} месяцев'
+      other: '%{count} месяцев'
+    weeks:
+      one: 'неделю'
+      few: '%{count} недели'
+      many: '%{count} недель'
+      other: '%{count} недель'
+    days:
+      one: 'день'
+      few: '%{count} дня'
+      many: '%{count} дней'
+      other: '%{count} дней'
+    hours:
+      one: 'час'
+      few: '%{count} часа'
+      many: '%{count} часов'
+      other: '%{count} часов'
+    minutes:
+      one: 'минуту'
+      few: '%{count} минуты'
+      many: '%{count} минут'
+      other: '%{count} минут'

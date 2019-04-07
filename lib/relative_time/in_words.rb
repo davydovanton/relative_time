@@ -1,14 +1,33 @@
+require 'i18n'
+require "i18n/backend/pluralization"
+
 module RelativeTime
   class InWords
+    def self.setup
+      return if @stup
+
+      I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
+      I18n.load_path << Dir[File.expand_path("config/locales") + "/*.rb"]
+      I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
+
+      @stup = true
+    end
+
+    def initialize(locale: :en)
+      self.class.setup
+      I18n.locale = locale
+    end
+
     def call(date_to, date_from)
       diff = date_from.to_time - date_to.to_time
-      return 'less than a minute' if diff.abs.round <= 59
+      return I18n.t('relative.less_than_a_minute') if diff.abs.round <= 59
 
-      date_string = verb_agreement(resolution(diff.abs.round))
-      diff >= 0 ? "#{date_string} ago" : "in #{date_string}"
+      date_string = resolution(diff.abs.round)
+      diff >= 0 ? "#{date_string} #{I18n.t('relative.ago')}" : "#{I18n.t('relative.in')} #{date_string}"
     end
 
   private
+
     MINUTE = 60
     HOUR   = 60 * MINUTE
     DAY    = 24 * HOUR
@@ -18,27 +37,17 @@ module RelativeTime
 
     def resolution(diff)
       if diff >= YEAR
-        [(diff / YEAR).round, 'years']
+        I18n.t('relative.years', count: (diff / YEAR).round)
       elsif diff >= MONTH
-        [(diff / MONTH).round, 'months']
+        I18n.t('relative.months', count: (diff / MONTH).round)
       elsif diff >= WEEK
-        [(diff / WEEK).round, 'weeks']
+        I18n.t('relative.weeks', count: (diff / WEEK).round)
       elsif diff >= DAY
-        [(diff / DAY).round, 'days']
+        I18n.t('relative.days', count: (diff / DAY).round)
       elsif diff >= HOUR
-        [(diff / HOUR).round, 'hours']
+        I18n.t('relative.hours', count: (diff / HOUR).round)
       else
-        [(diff / MINUTE).round, 'minutes']
-      end
-    end
-
-    def verb_agreement(resolution)
-      if resolution[0] == 1 && resolution.last == 'hours'
-        'an hour'
-      elsif resolution[0] == 1
-        "a #{resolution.last[0...-1]}"
-      else
-        resolution.join(' ')
+        I18n.t('relative.minutes', count: (diff / MINUTE).round)
       end
     end
   end

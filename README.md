@@ -52,6 +52,19 @@ RelativeTime.in_words(Time.now, date_from)          # => an hour ago
 * months
 * years
 
+### I18n
+Relative time use [i18n](https://github.com/ruby-i18n/i18n) for pluralization and translation to other languages. For using specific locale just call `#in_words` with specific locale:
+
+```ruby
+RelativeTime.in_words(Time.now, locale: :ru)            # => через 3 часа
+RelativeTime.in_words(Time.now, date_from, locale: :ru) # => минуту назад
+```
+
+List of supported locales:
+
+* `en`
+* `ru`
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/davydovanton/relative_time. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
