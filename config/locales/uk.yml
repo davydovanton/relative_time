@@ -1,0 +1,37 @@
+ru:
+  relative:
+    less_than_a_minute: 'менш ніж хвилину тому'
+
+    ago: 'тому'
+    in: 'за'
+
+    years:
+      one: 'рік'
+      few: '%{count} роки'
+      many: '%{count} років'
+      other: '%{count} років'
+    months:
+      one: 'місяць'
+      few: '%{count} місяці'
+      many: '%{count} місяців'
+      other: '%{count} місяців'
+    weeks:
+      one: 'тиждень'
+      few: '%{count} тижні'
+      many: '%{count} тижнів'
+      other: '%{count} тижнів'
+    days:
+      one: 'день'
+      few: '%{count} дні'
+      many: '%{count} днів'
+      other: '%{count} днів'
+    hours:
+      one: 'година'
+      few: '%{count} години'
+      many: '%{count} годин'
+      other: '%{count} годин'
+    minutes:
+      one: 'хвилина'
+      few: '%{count} хвилини'
+      many: '%{count} хвилин'
+      other: '%{count} хвилин'
