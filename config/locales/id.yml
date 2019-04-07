@@ -1,0 +1,26 @@
+id:
+  relative:
+    less_than_a_minute: 'kurang dari 1 menit'
+
+    ago: 'yang lalu'
+    in: 'dalam'
+
+    years:
+      one: 'setahun'
+      other: '%{count} tahun'
+    months:
+      one: 'sebulan'
+      other: '%{count} bulan'
+    weeks:
+      one: 'seminggu'
+      other: '%{count} minggu'
+    days:
+      one: 'sehari'
+      other: '%{count} hari'
+    hours:
+      one: 'sejam'
+      other: '%{count} jam'
+    minutes:
+      one: 'semenit'
+      other: '%{count} menit'
+
