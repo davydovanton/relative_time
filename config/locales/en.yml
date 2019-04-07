@@ -4,6 +4,9 @@ en:
   relative:
     less_than_a_minute: 'less than a minute'
 
+    ago: 'ago'
+    in: 'in'
+
     years:
       one: 'a year'
       other: '%{count} years'

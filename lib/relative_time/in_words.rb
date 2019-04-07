@@ -9,10 +9,10 @@ module RelativeTime
 
     def call(date_to, date_from)
       diff = date_from.to_time - date_to.to_time
-      return 'less than a minute' if diff.abs.round <= 59
+      return I18n.t('relative.less_than_a_minute') if diff.abs.round <= 59
 
       date_string = resolution(diff.abs.round)
-      diff >= 0 ? "#{date_string} ago" : "in #{date_string}"
+      diff >= 0 ? "#{date_string} #{I18n.t('relative.ago')}" : "#{I18n.t('relative.in')} #{date_string}"
     end
 
   private
