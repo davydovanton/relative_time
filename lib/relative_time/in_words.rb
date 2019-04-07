@@ -4,13 +4,13 @@ require 'i18n/backend/pluralization'
 module RelativeTime
   class InWords
     def self.setup
-      return if @stup
+      return if @setup
 
       I18n.load_path << Dir[File.expand_path('config/locales') + '/*.yml']
       I18n.load_path << Dir[File.expand_path('config/locales') + '/*.rb']
       I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
 
-      @stup = true
+      @setup = true
     end
 
     def initialize(locale: :en)
