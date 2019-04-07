@@ -31,7 +31,7 @@ describe RelativeTime do
       describe 'date DataTime type' do
         let(:date) { DateTime.now + 1 }
 
-        it { RelativeTime.in_words(date, date_from, locale: :ru).must_equal 'через 23 часов' }
+        it { RelativeTime.in_words(date, date_from, locale: :ru).must_equal 'через 23 часа' }
       end
     end
 
@@ -70,12 +70,12 @@ describe RelativeTime do
       it { RelativeTime.in_words(date - 1  * hour, locale: :ru).must_equal  'час назад' }
       it { RelativeTime.in_words(date - 3  * hour, locale: :ru).must_equal  '3 часа назад' }
       it { RelativeTime.in_words(date - 10 * hour, locale: :ru).must_equal '10 часов назад' }
-      it { RelativeTime.in_words(date - 23 * hour, locale: :ru).must_equal '23 часов назад' }
+      it { RelativeTime.in_words(date - 23 * hour, locale: :ru).must_equal '23 часа назад' }
 
       it { RelativeTime.in_words(date + 1  * hour, locale: :ru).must_equal 'через час' }
       it { RelativeTime.in_words(date + 3  * hour, locale: :ru).must_equal 'через 3 часа' }
       it { RelativeTime.in_words(date + 10 * hour, locale: :ru).must_equal 'через 10 часов' }
-      it { RelativeTime.in_words(date + 23 * hour, locale: :ru).must_equal 'через 23 часов' }
+      it { RelativeTime.in_words(date + 23 * hour, locale: :ru).must_equal 'через 23 часа' }
     end
 
     describe 'when difference in days' do
@@ -88,7 +88,7 @@ describe RelativeTime do
 
       it { RelativeTime.in_words(date + 1 * day, locale: :ru).must_equal 'через день' }
       it { RelativeTime.in_words(date + 3 * day, locale: :ru).must_equal 'через 3 дня' }
-      it { RelativeTime.in_words(date + 6 * day, locale: :ru).must_equal 'через 6 деней' }
+      it { RelativeTime.in_words(date + 6 * day, locale: :ru).must_equal 'через 6 дней' }
     end
 
     describe 'when difference in weeks' do
@@ -100,11 +100,9 @@ describe RelativeTime do
 
       it { RelativeTime.in_words(date - 1 * week, locale: :ru).must_equal 'неделю назад' }
       it { RelativeTime.in_words(date - 3 * week, locale: :ru).must_equal '3 недели назад' }
-      it { RelativeTime.in_words(date - 9 * week, locale: :ru).must_equal '9 недель назад' }
 
       it { RelativeTime.in_words(date + 1 * week, locale: :ru).must_equal 'через неделю' }
       it { RelativeTime.in_words(date + 3 * week, locale: :ru).must_equal 'через 3 недели' }
-      it { RelativeTime.in_words(date + 9 * week, locale: :ru).must_equal 'через 9 недель' }
     end
 
     describe 'when difference in months' do
