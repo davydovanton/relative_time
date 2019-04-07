@@ -1,0 +1,19 @@
+tr:
+  relative:
+    less_than_a_minute: '1 dakikadan daha az'
+
+    ago: '%{date_string} önce'
+    in: '%{date_string} içinde'
+
+    years:
+      other: '%{count} yıl'
+    months:
+      other: '%{count} ay'
+    weeks:
+      other: '%{count} hafta'
+    days:
+      other: '%{count} gün'
+    hours:
+      other: '%{count} saat'
+    minutes:
+      other: '%{count} dakika'

@@ -1,13 +1,13 @@
 require 'i18n'
-require "i18n/backend/pluralization"
+require 'i18n/backend/pluralization'
 
 module RelativeTime
   class InWords
     def self.setup
       return if @stup
 
-      I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
-      I18n.load_path << Dir[File.expand_path("config/locales") + "/*.rb"]
+      I18n.load_path << Dir[File.expand_path('config/locales') + '/*.yml']
+      I18n.load_path << Dir[File.expand_path('config/locales') + '/*.rb']
       I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
 
       @stup = true
@@ -23,10 +23,10 @@ module RelativeTime
       return I18n.t('relative.less_than_a_minute') if diff.abs.round <= 59
 
       date_string = resolution(diff.abs.round)
-      diff >= 0 ? "#{date_string} #{I18n.t('relative.ago')}" : "#{I18n.t('relative.in')} #{date_string}"
+      diff >= 0 ? I18n.t('relative.ago', date_string: date_string) : I18n.t('relative.in', date_string: date_string)
     end
 
-  private
+    private
 
     MINUTE = 60
     HOUR   = 60 * MINUTE
