@@ -2,8 +2,8 @@ id:
   relative:
     less_than_a_minute: 'kurang dari 1 menit'
 
-    ago: 'yang lalu'
-    in: 'dalam'
+    ago: '%{date_string} yang lalu'
+    in: 'dalam %{date_string}'
 
     years:
       one: 'setahun'

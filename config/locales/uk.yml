@@ -2,8 +2,8 @@ uk:
   relative:
     less_than_a_minute: 'менш ніж хвилину тому'
 
-    ago: 'тому'
-    in: 'за'
+    ago: '%{date_string} тому'
+    in: 'за %{date_string}'
 
     years:
       one: 'рік'
