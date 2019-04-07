@@ -1,10 +1,17 @@
+require 'i18n'
+
 module RelativeTime
   class InWords
+    def initialize(locale: :en)
+      I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
+      I18n.locale = locale
+    end
+
     def call(date_to, date_from)
       diff = date_from.to_time - date_to.to_time
       return 'less than a minute' if diff.abs.round <= 59
 
-      date_string = verb_agreement(resolution(diff.abs.round))
+      date_string = resolution(diff.abs.round)
       diff >= 0 ? "#{date_string} ago" : "in #{date_string}"
     end
 
@@ -18,27 +25,17 @@ module RelativeTime
 
     def resolution(diff)
       if diff >= YEAR
-        [(diff / YEAR).round, 'years']
+        I18n.t('relative.years', count: (diff / YEAR).round)
       elsif diff >= MONTH
-        [(diff / MONTH).round, 'months']
+        I18n.t('relative.months', count: (diff / MONTH).round)
       elsif diff >= WEEK
-        [(diff / WEEK).round, 'weeks']
+        I18n.t('relative.weeks', count: (diff / WEEK).round)
       elsif diff >= DAY
-        [(diff / DAY).round, 'days']
+        I18n.t('relative.days', count: (diff / DAY).round)
       elsif diff >= HOUR
-        [(diff / HOUR).round, 'hours']
+        I18n.t('relative.hours', count: (diff / HOUR).round)
       else
-        [(diff / MINUTE).round, 'minutes']
-      end
-    end
-
-    def verb_agreement(resolution)
-      if resolution[0] == 1 && resolution.last == 'hours'
-        'an hour'
-      elsif resolution[0] == 1
-        "a #{resolution.last[0...-1]}"
-      else
-        resolution.join(' ')
+        I18n.t('relative.minutes', count: (diff / MINUTE).round)
       end
     end
   end

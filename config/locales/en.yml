@@ -1,0 +1,24 @@
+en:
+  test: "This is a test"
+en:
+  relative:
+    less_than_a_minute: 'less than a minute'
+
+    years:
+      one: 'a year'
+      other: '%{count} years'
+    months:
+      one: 'a month'
+      other: '%{count} months'
+    weeks:
+      one: 'a week'
+      other: '%{count} weeks'
+    days:
+      one: 'a day'
+      other: '%{count} days'
+    hours:
+      one: 'an hour'
+      other: '%{count} hours'
+    minutes:
+      one: 'a minute'
+      other: '%{count} minutes'
