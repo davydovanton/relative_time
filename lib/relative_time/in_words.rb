@@ -1,9 +1,11 @@
 require 'i18n'
+require "i18n/backend/pluralization"
 
 module RelativeTime
   class InWords
     def initialize(locale: :en)
       I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
+      I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
       I18n.locale = locale
     end
 
@@ -16,6 +18,7 @@ module RelativeTime
     end
 
   private
+
     MINUTE = 60
     HOUR   = 60 * MINUTE
     DAY    = 24 * HOUR
