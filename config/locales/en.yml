@@ -2,8 +2,8 @@ en:
   relative:
     less_than_a_minute: 'less than a minute'
 
-    ago: 'ago'
-    in: 'in'
+    ago: '%{date_string} ago'
+    in: 'in %{date_string}'
 
     years:
       one: 'a year'
