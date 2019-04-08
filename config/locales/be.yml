@@ -1,0 +1,37 @@
+be:
+  relative:
+    less_than_a_minute: 'менш хвіліны таму'
+
+    ago: '%{date_string} таму'
+    in: 'праз %{date_string}'
+
+    years:
+      one: 'год'
+      few: '%{count} года'
+      many: '%{count} гадоў'
+      other: '%{count} гадоў'
+    months:
+      one: 'месяц'
+      few: '%{count} месяцы'
+      many: '%{count} месяцаў'
+      other: '%{count} месяцаў'
+    weeks:
+      one: 'тыдзень'
+      few: '%{count} тыдні'
+      many: '%{count} тыдняў'
+      other: '%{count} тыдняў'
+    days:
+      one: 'дзень'
+      few: '%{count} дні'
+      many: '%{count} дзён'
+      other: '%{count} дзён'
+    hours:
+      one: 'гадзіну'
+      few: '%{count} гадзіны'
+      many: '%{count} гадзін'
+      other: '%{count} гадзін'
+    minutes:
+      one: 'хвіліну'
+      few: '%{count} хвіліны'
+      many: '%{count} хвілін'
+      other: '%{count} хвілін'
