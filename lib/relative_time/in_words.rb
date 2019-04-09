@@ -6,8 +6,8 @@ module RelativeTime
     def self.setup
       return if @setup
 
-      I18n.load_path << Dir[File.expand_path('config/locales') + '/*.yml']
-      I18n.load_path << Dir[File.expand_path('config/locales') + '/*.rb']
+      I18n.load_path << Dir[File.expand_path("#{__dir__}/../../config/locales") + '/*.yml']
+      I18n.load_path << Dir[File.expand_path("#{__dir__}/../../config/locales") + '/*.rb']
       I18n::Backend::Simple.send(:include, I18n::Backend::Pluralization)
 
       @setup = true
