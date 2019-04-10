@@ -1,0 +1,25 @@
+pt:
+  relative:
+    less_than_a_minute: 'menos de um minuto'
+
+    ago: 'há %{date_string}'
+    in: 'em %{date_string}'
+
+    years:
+      one: 'um ano'
+      other: '%{count} anos'
+    months:
+      one: 'um mês'
+      other: '%{count} meses'
+    weeks:
+      one: 'uma semana'
+      other: '%{count} semanas'
+    days:
+      one: 'um dia'
+      other: '%{count} dias'
+    hours:
+      one: 'uma hora'
+      other: '%{count} horas'
+    minutes:
+      one: 'um minuto'
+      other: '%{count} minutos'
