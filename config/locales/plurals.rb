@@ -1,3 +1,4 @@
+# typed: strict
 # encoding: utf-8
 
 {

@@ -4,7 +4,7 @@ module RelativeTime
   sig do
     params(
       date_to: T.any(Time, DateTime, Date),
-      date_from: T.any(NilClass, Time, DateTime, Date),
+      date_from: T.any(Time, DateTime, Date),
       locale: T.any(NilClass, String, Symbol)
     ).returns(String)
   end
