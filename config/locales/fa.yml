@@ -1,0 +1,25 @@
+fa:
+  relative:
+    less_than_a_minute: 'کمتر از یک دقیقه'
+
+    ago: '%{date_string} پیش'
+    in: '%{date_string} دیگر'
+
+    years:
+      one: 'یک سال'
+      other: '%{count} سال'
+    months:
+      one: 'یک ماه'
+      other: '%{count} ماه'
+    weeks:
+      one: 'یک هفته'
+      other: '%{count} هفته'
+    days:
+      one: 'یک روز'
+      other: '%{count} روز'
+    hours:
+      one: 'یک ساعت'
+      other: '%{count} ساعت'
+    minutes:
+      one: 'یک دقیقه'
+      other: '%{count} دقیقه'
